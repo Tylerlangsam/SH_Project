@@ -7,4 +7,4 @@ class ChildForm(forms.Form):
     choices = []
     for babysitter in Babysitter.objects.all():
         choices.append((babysitter.babysitter_id, babysitter.name + ", " + babysitter.gender + ", " + babysitter.age ))
-    babysitters = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices, required=True)
+    babysitters = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices, required=False)

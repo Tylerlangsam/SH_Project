@@ -5,5 +5,7 @@ urlpatterns = [
     #child profiles homepage
     path('', views.profiles, name="profiles"),
     #create child profile page
-    path('createprofile/', views.createprofile, name='createprofile')
+    path('createprofile/', views.createprofile, name='createprofile'),
+    #report page
+    path('report/<int:child_id>/', views.report, name='report'),
   ]
