@@ -69,6 +69,7 @@ color: white;
     <h3 style="font-weight: bolder;">Choose A Profile:</h3>
     <ul>
         {% for child in children %}
+        <a href="{% url 'report' child.child_id %}">reports</a>
         <li style="font-weight: bold; align-items: center;">{{ child.name }} , {{ child.age }} </li>
         {% endfor %}
     </ul>
