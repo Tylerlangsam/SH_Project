@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Child
-from .forms import ChildForm
+from .models import Child, Report
+from .forms import ChildForm, ReportForm
 
 #Create your views here.
 
