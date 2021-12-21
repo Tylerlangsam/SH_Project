@@ -20,5 +20,6 @@ class Report(models.Model):
     meal = models.CharField(max_length = 255)
     potty = models.CharField(max_length=255)
     nap = models.CharField(max_length=255)
-    child_id = models.ForeignKey(Child, on_delete=models.CASCADE)
+    child = models.ForeignKey(Child, on_delete=models.CASCADE, null=True)
+    
 
