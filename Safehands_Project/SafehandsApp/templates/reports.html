@@ -1,9 +1,34 @@
-
-
-{% for report in reports %}
-{{ report.report }}
-{{ report.child_id }}
-{{ report.meal }}
-{{ report.potty }}
-{{ report.nap }}
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='text'],
+        textarea {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>Create New Report</h3>
+<form style='align-content: center;' action="{% url 'report' %}" method="POST">
+{% csrf_token %} 
+{{ form }}
+    <input class = "button" type="submit" name="save" value="Save" />
+</form>
+<ul>
+    {% for report in reports %}
+    <li>Report:
+    Name:{{ report.child.name }}<br>
+    Meal:{{ report.meal }}<br>
+    Potty:{{ report.potty }}<br>
+    Naptime:{{ report.nap }}</li><br>
+    {% endfor %}
+</ul>
+    
+    
+</body>
+</html>
