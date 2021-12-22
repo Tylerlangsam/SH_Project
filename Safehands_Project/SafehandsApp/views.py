@@ -44,9 +44,9 @@ def report(request):
                 meal = form.cleaned_data['meal']
                 potty = form.cleaned_data['potty']
                 nap = form.cleaned_data['nap']
-                child = form.cleaned_data['child']
-                reports = Report.objects.filter()
-                reports.create(meal=meal, potty=potty, nap=nap, child=child)
+                child_id = form.cleaned_data['child']
+                selected_child = Child.objects.get(pk=child_id)
+                Report.objects.create(meal=meal, potty=potty, nap=nap, child=selected_child)
             return HttpResponseRedirect(reverse('report'))
 
 
