@@ -74,8 +74,15 @@ color: white;
         {% endfor %}
     </ul>
     <a link href="http://127.0.0.1:8000/profiles/createprofile/" class="ccp">
-        Create New Profile
-    </a>
+        Create New Profile    
+    </a><br>
+    Add BabySitter
+    <form style="align-content: center;" action= "{% url 'profiles' %}" method="Post">
+    {% csrf_token %}
+    {{ form }}
+    <input class="button" type="submit" name="save" value="Save" />
+    </form>
+    <br>
       </div>
 </body>
 </html>
