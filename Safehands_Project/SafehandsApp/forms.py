@@ -19,3 +19,10 @@ class ReportForm(forms.Form):
         choices.append((child.child_id, child.name))
     child = forms.ChoiceField(widget=forms.Select, choices=choices, required=True)
 
+class BabysitterForm(forms.Form):
+    name = forms.CharField(max_length=25, required=True)
+    age = forms.CharField(max_length=25, required=True)
+    gender = forms.CharField(max_length=25, required=True)
+
+
+

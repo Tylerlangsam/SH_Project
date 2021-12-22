@@ -1,21 +1,35 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Child, Report
-from .forms import ChildForm, ReportForm
+from .models import Child, Report, Babysitter
+from .forms import ChildForm, ReportForm, BabysitterForm
 
 #Create your views here.
 
 def profiles(request):
+    if request.method == 'GET':
+        children = Child.objects.all()
+        babysitters = Babysitter.objects.all()
+        form = BabysitterForm()
+        return render(request, 'profiles.html', context={'children':children, 'babysitters':babysitters, 'form':form})
+
     #children is our queryset of Child objects
-    children = Child.objects.all()
-    return render (request, 'profiles.html', context={'children':children})
+    if request.method == 'POST':
+        form = BabysitterForm(request.POST)
+        if form.is_valid():
+             if 'save' in request.POST:
+                name = form.cleaned_data['name']
+                age = form.cleaned_data['age']
+                gender = form.cleaned_data['gender']
+                Babysitter.objects.create(name=name, age= age, gender=gender)
+        return HttpResponseRedirect(reverse('profiles'))
 
 def createprofile(request):
     if request.method == 'GET':
         children = Child.objects.all()
+        babysitters = Babysitter.objects.all()
         form = ChildForm()
-        return render(request, 'createprofile.html', context={ 'children': children, 'form': form})
+        return render(request, 'createprofile.html', context={ 'children': children, 'form': form, 'babysitters':babysitters})
   
     if request.method == 'POST':
         form = ChildForm(request.POST)
@@ -32,10 +46,10 @@ def createprofile(request):
 
 def report(request):
     if request.method == 'GET':
- # child = Child.objects.get(pk=child_id)
         reports = Report.objects.all()
+        children = Child.objects.all()
         form = ReportForm()
-        return render(request, 'reports.html', context={'reports':reports, 'form':form})
+        return render(request, 'reports.html', context={'reports':reports, 'form':form, 'children':children})
     
     if request.method == "POST":
         form = ReportForm(request.POST)
