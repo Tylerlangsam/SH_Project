@@ -8,5 +8,6 @@ urlpatterns = [
     path('createprofile/', views.createprofile, name='createprofile'),
     #report page
     path('report/', views.report, name='report'),
+    path('edit/<int:report_id>', views.edit, name='edit'),
 
   ]
