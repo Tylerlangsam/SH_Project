@@ -26,6 +26,7 @@
     Meal:{{ report.meal }}<br>
     Potty:{{ report.potty }}<br>
     Naptime:{{ report.nap }}</li><br>
+    <a href="{% url 'edit' report.report_id  %}"> edit reports</a>
     {% endfor %}
 </ul>
     

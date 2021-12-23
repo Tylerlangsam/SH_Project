@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+ <form action="{% url 'edit' id %}" method="POST">
+    {% csrf_token %} {{ form }}
+    <input type="submit" name="save" value="Save" />
+    <input type="submit" name="delete" value="Delete" />
+</form>   
 </body>
 </html>

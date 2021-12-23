@@ -63,4 +63,25 @@ def report(request):
                 Report.objects.create(meal=meal, potty=potty, nap=nap, child=selected_child)
             return HttpResponseRedirect(reverse('report'))
 
+def edit(request, report_id):
+    if request.method=='GET':
+        report=Report.objects.get(pk=report_id)
+        # child=[]
+        # for children in report.child.all():
+        #     child.append(children.child_id)
+        form=ReportForm(initial={'meal':report.meal,'nap':report.nap,'potty':report.potty})
+        return render(request=request, template_name='edit.html', context={'form':form, 'id':report_id})
+    if request.method=='POST':
+        form=ReportForm(request.POST)
+        if form.is_valid():
+            if 'save' in request.POST:
+                meal = form.cleaned_data['meal']
+                potty = form.cleaned_data['potty']
+                nap = form.cleaned_data['nap']
+                child_id = form.cleaned_data['child']
+                selected_child = Child.objects.get(pk=child_id)
+                Report.objects.update(meal=meal, potty=potty, nap=nap, child=selected_child)
+            elif "delete" in request.POST:
+                Report.objects.filter(pk=report_id).delete()
+            return HttpResponseRedirect(reverse('report'))
 
