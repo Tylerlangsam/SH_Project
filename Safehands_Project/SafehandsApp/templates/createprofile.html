@@ -62,17 +62,16 @@ color: white;
     </style>
 </head>
 <body>
-    <div class="topnav">
-        <a class ="active">Safe Hands</a>
-        <a href="http://127.0.0.1:8000/profiles/">Home</a>
-        <a href="">Example</a>
-        <a href="">Example</a>
-      </div>
+  <div class="topnav">
+    <a class ="active">Safe Hands</a>
+    <a href="http://127.0.0.1:8000/profiles/">Home</a>
+    <a href="http://127.0.0.1:8000/profiles/createprofile/">Create Profile</a>
+    <a href="http://127.0.0.1:8000/profiles/report/">Reports</a>
+  </div>
 <h3>Create New Child Profile</h3>
 <form style='align-content: center;' action="{% url 'createprofile'  %}" method="POST">
 {% csrf_token %} {{ form }}
     <input class = "button" type="submit" name="save" value="Create" />
-    <input class = "button" type="submit" name="delete" value="Delete" />
 </form>
 </body>
 </html>
