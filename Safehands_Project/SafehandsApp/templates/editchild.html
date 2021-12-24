@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style>
-           input {
+    <title>Edit Child Profile</title>
+    <style>
+        input[type='text'],
+        input[type='url'],
+        textarea {
+            display: block;
+        }
+
+        input {
         background-color: #333;
         border: 1px solid black;
         color:white;
@@ -60,9 +66,7 @@ color: white;
   color: white;
 }
 
-
-     
-</style>
+    </style>
 </head>
 <body>
     <div class="topnav">
@@ -71,10 +75,11 @@ color: white;
         <a href="http://127.0.0.1:8000/profiles/createprofile/">Create Profile</a>
         <a href="http://127.0.0.1:8000/profiles/report/">Reports</a>
       </div>
- <form action="{% url 'edit' id %}" method="POST">
-    {% csrf_token %} {{ form }}
-    <input type="submit" name="save" value="Save" />
-    <input type="submit" name="delete" value="Delete" />
-</form>   
+    <h1>Edit Child Profile</h1>
+    <form action="{% url 'editchild' id %}" method="POST">
+        {% csrf_token %} {{ form }}
+        <input type="submit" name="save" value="Save" />
+        <input type="submit" name="delete" value="Delete" />
+    </form>
 </body>
 </html>
