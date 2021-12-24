@@ -1,13 +1,16 @@
 # SafeHands
 Safe Hands MVP / CRUD Project 3 for JTC<br>
 Collaborators: Tyler Langsam, Duc Ta, Emiliano<br>
-Wireframe:
-<img width="810" alt="Safehands Wireframe" src="https://user-images.githubusercontent.com/90009414/142518825-c8b99446-fda0-4eae-9013-d2ee7ee9e554.png">
+
+# Wireframe:
+![Wireframe]([asset.png](https://files.slack.com/files-pri/TRNDGKCPK-F02RF6WCYDV/screen_shot_2021-11-20_at_8.32.00_am.png))
+
+<!-- <img width="810" alt="Safehands Wireframe" src="https://user-images.githubusercontent.com/90009414/142518825-c8b99446-fda0-4eae-9013-d2ee7ee9e554.png"> -->
 
 <br>
 
 <h1>Safe Hands Project Guide</h1>
-Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report for the parent to view. 
+Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report.
 
 <br>
 
