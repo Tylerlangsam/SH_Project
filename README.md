@@ -7,7 +7,7 @@ Wireframe:
 <br>
 
 <h1>Safe Hands Project Guide</h1>
-Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report for the parent to view. The app also allows the parent to view the status of their child's babysitter, and view the child's report.
+Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report for the parent to view. 
 
 <br>
 
