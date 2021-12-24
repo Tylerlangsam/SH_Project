@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Child Profile</title>
+    <title>Edit Child Profile</title>
     <style>
+        input[type='text'],
+        input[type='url'],
+        textarea {
+            display: block;
+        }
+
         input {
         background-color: #333;
         border: 1px solid black;
         color:white;
         padding: 5px 10px;
-        text-align: center;
-        font-weight: bold;
-        display: inline-block;
+        font-weight: normal;
+        text-align: left;
         font-size: 15px;
         margin: 5px 15px;
         cursor: pointer;
@@ -26,14 +31,16 @@
             cursor: default;
         }
         body {
-    text-align: center;
+    text-align:center;
 }
 form {
-    display: inline-block;
+    display: inline-table;
+    text-align: left;
+    font-weight: bold;
 }
-.topnav {
+    .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #333333;
 }
 .topnav a.label {
 color: white;
@@ -56,22 +63,23 @@ color: white;
 
 .topnav a.active {
   background-color: #04AA6D;
-  color:black;
+  color: white;
 }
 
     </style>
 </head>
 <body>
-  <div class="topnav">
-    <a class ="active">Safe Hands</a>
-    <a href="http://127.0.0.1:8000/profiles/">Home</a>
-    <a href="http://127.0.0.1:8000/profiles/createprofile/">Create Profile</a>
-    <a href="http://127.0.0.1:8000/profiles/report/">Reports</a>
-  </div>
-<h3>Create New Child Profile</h3>
-<form style='align-content: center;' action="{% url 'createprofile'  %}" method="POST">
-{% csrf_token %} {{ form }}
-    <input class = "button" type="submit" name="save" value="Create" />
-</form>
+    <div class="topnav">
+        <a class ="active">Safe Hands</a>
+        <a href="http://127.0.0.1:8000/profiles/">Home</a>
+        <a href="http://127.0.0.1:8000/profiles/createprofile/">Create Profile</a>
+        <a href="http://127.0.0.1:8000/profiles/report/">Reports</a>
+      </div>
+    <h1>Edit Child Profile</h1>
+    <form action="{% url 'editchild' id %}" method="POST">
+        {% csrf_token %} {{ form }}
+        <input type="submit" name="save" value="Save" />
+        <input type="submit" name="delete" value="Delete" />
+    </form>
 </body>
 </html>

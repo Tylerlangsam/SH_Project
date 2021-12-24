@@ -13,7 +13,11 @@ Collaborators: Tyler Langsam, Duc Ta, Emiliano<br>
 <br>
 
 <h1>Safe Hands Project Guide</h1>
+
 Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report.
+
+Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report. 
+
 
 <br>
 
