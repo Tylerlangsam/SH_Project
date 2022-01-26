@@ -17,7 +17,7 @@ class ReportForm(forms.Form):
     choices = []
     for child in Child.objects.all():
         choices.append((child.child_id, child.name))
-    child = forms.ChoiceField(widget=forms.Select, choices=choices, required=True)
+    child = forms.ChoiceField(widget=forms.SelectMultiple, choices=choices, required=True)
 # Babysitter for allowing user to create a profile for a babysitter
 class BabysitterForm(forms.Form):
     name = forms.CharField(max_length=25, required=True)

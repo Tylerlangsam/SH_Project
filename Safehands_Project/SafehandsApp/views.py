@@ -50,7 +50,7 @@ def createprofile(request):
                 age = form.cleaned_data['age']
                 gender = form.cleaned_data['gender']
                 babysitters = form.cleaned_data['babysitters']
-                child = Child.objects.filter()
+                child = Child.objects.all()
                 child.create(name=name, age=age, gender=gender)
                 child[0].babysitters.set(babysitters)
                 #Finally, it redirects back to profiles after saving this new child.
