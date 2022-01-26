@@ -76,7 +76,7 @@ color: white;
     <h3 style="font-weight: bolder;">Child Roster:</h3>
     <ul>
         {% for child in children %}
-        <li style="font-weight: bold; align-items: center;"><a href="{% url 'editchild' child.child_id %}">{{ child.name }} , {{ child.age }} </a></li>
+        <li style="font-weight: bold; align-items: center;"><a href="{% url 'editchild' child.child_id %}">{{ child.name }} , {{ child.age }}, {{ child.gender }}</a></li>
         {% endfor %}
     </ul>
     <a link href="http://127.0.0.1:8000/profiles/createprofile/" class="ccp">
