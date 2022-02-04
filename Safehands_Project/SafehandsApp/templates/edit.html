@@ -67,9 +67,9 @@ color: white;
 <body>
     <div class="topnav">
         <a class ="active">Safe Hands</a>
-        <a href="http://127.0.0.1:8000/profiles/">Home</a>
-        <a href="http://127.0.0.1:8000/profiles/createprofile/">Create Profile</a>
-        <a href="http://127.0.0.1:8000/profiles/report/">Reports</a>
+        <a href="http://127.0.0.1:8000/">Home</a>
+        <a href="http://127.0.0.1:8000/createprofile/">Create Profile</a>
+        <a href="http://127.0.0.1:8000/report/">Reports</a>
       </div>
  <form action="{% url 'edit' id %}" method="POST">
     {% csrf_token %} {{ form }}
