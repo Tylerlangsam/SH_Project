@@ -16,8 +16,6 @@ Collaborators: Tyler Langsam, Duc Ta, Emiliano<br>
 
 Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report.
 
-Safe Hands is a babysitting app that offers real-time notifications of your child’s status with their babysitter. The app allows the babysitter to create their roster of children via child profiles, and view/create/edit a personalized report. 
-
 
 <br>
 
@@ -40,15 +38,12 @@ Safe Hands is a babysitting app that offers real-time notifications of your chil
 <br>
 
 # Start Using Your Safe Hands App! Have Fun Exploring!
-From the HomePage, the babysitter will be able to view see and click on a specific name to view the that child's report. The babysitter will have the ability to create a new child profile. In addition, the babysitter could onboard a new babysitter and create a new babysitter profile.
+
 
 <br>
 
-The ChildProfile page displays the list of active children profiles. A babysitter can assign themselves to a child's profile.
+The ChildProfile page displays the list of active children profiles. A babysitter can assign themselves to a child's profile. Clicking a childs name will allow the babysitter to edit or delete the child profile. Clicking the report button will take the user to a page where they can select a child to create a report for and add it to the list of reports displayed. Clicking on a specific report will allow the user to edit or delete the report.
 
-<br>
-
-The Report Page displays the list of children and their activities. The user can edit a child's report by the 'edit' link. When a child is no longer active, the user can delete the child's profile.
 
 <br>
 
