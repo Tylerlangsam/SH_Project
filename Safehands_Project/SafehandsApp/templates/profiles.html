@@ -61,9 +61,9 @@ color: white;
 <body>
   <div class="topnav">
     <a class ="active">Safe Hands</a>
-    <a href="http://127.0.0.1:8000/profiles/">Home</a>
-    <a href="http://127.0.0.1:8000/profiles/createprofile/">Create Profile</a>
-    <a href="http://127.0.0.1:8000/profiles/report/">Reports</a>
+    <a href="http://127.0.0.1:8000/">Home</a>
+    <a href="http://127.0.0.1:8000/createprofile/">Create Profile</a>
+    <a href="http://127.0.0.1:8000/report/">Reports</a>
   </div>
       <div class ="center">
     <h1 style="text-align: center; font-style: italic;">Safe Hands</h1><br><br>
@@ -73,15 +73,23 @@ color: white;
     {{ form }}
     <input class="button" type="submit" name="save" value="Save" />
     </form>
+    <h3 style="font-weight: bolder;">Babysitters:</h3>
+    <ul>
+    {% for babysitter in babysitters %}
+    <li style="font-weight: bold; align-items: center;"><a href="{% url 'editsitter' babysitter.babysitter_id %}">{{ babysitter.name }}</li></a>
+    {% endfor %}
+    </ul>
+    <br>
+    <br>
     <h3 style="font-weight: bolder;">Child Roster:</h3>
     <ul>
         {% for child in children %}
         <li style="font-weight: bold; align-items: center;"><a href="{% url 'editchild' child.child_id %}">{{ child.name }} , {{ child.age }}, {{ child.gender }}</a></li>
         {% endfor %}
     </ul>
-    <a link href="http://127.0.0.1:8000/profiles/createprofile/" class="ccp">
+    <a link href="http://127.0.0.1:8000/createprofile/" class="ccp">
         Create New Profile    
-    </a><a link href="http://127.0.0.1:8000/profiles/report/" class="ccp">
+    </a><a link href="http://127.0.0.1:8000/report/" class="ccp">
         Reports
     </a><br>
 

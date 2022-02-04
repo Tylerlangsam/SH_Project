@@ -11,6 +11,8 @@ urlpatterns = [
     #edit report page
     path('edit/<int:report_id>', views.edit, name='edit'),
     #edit child profile page
-    path('editchild/<int:child_id>', views.editchild, name='editchild')
+    path('editchild/<int:child_id>', views.editchild, name='editchild'),
+    #edit babysitter page
+    path('editsitter/<int:babysitter_id>', views.editsitter, name='editsitter')
 
   ] 

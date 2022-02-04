@@ -1,3 +1,4 @@
+from genericpath import exists
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -111,7 +112,7 @@ def edit(request, report_id):
 def editchild(request, child_id):
     #The code starts by checking if the request is a GET.
     if request.method =='GET':
-    #If it is, then it will get the child object and create a form with all of its attributes.
+    #Get the child object by its primary key and create a form with all of that objects attributes.
         child=Child.objects.get(pk=child_id)
         babysitters = []
         for babysitter in child.babysitters.all():
@@ -137,6 +138,25 @@ def editchild(request, child_id):
             elif 'delete' in request.POST:
                 Child.objects.filter(pk=child_id).delete()
         return HttpResponseRedirect(reverse('profiles'))
-            
+
+def editsitter(request, babysitter_id):
+    if request.method == 'GET':
+        babysitter = Babysitter.objects.get(pk=babysitter_id)
+        form = BabysitterForm(initial={'name':babysitter.name, 'age':babysitter.age, 'gender':babysitter.gender})
+        return render(request, 'editsitter.html', {'form':form, 'id':babysitter_id})
+    if request.method == 'POST':
+        form = BabysitterForm(request.POST)
+        if form.is_valid():
+            if 'save' in request.POST:
+                name = form.cleaned_data['name']
+                age = form.cleaned_data['age']
+                gender = form.cleaned_data['gender']
+                babysitter = Babysitter.objects.filter(pk=babysitter_id)
+                babysitter.update(name=name, age=age, gender=gender)
+            elif 'delete' in request.POST:
+                Babysitter.objects.filter(pk=babysitter_id).delete()
+                return HttpResponseRedirect(reverse('profiles'))
+
+
 
 
