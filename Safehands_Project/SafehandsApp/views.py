@@ -1,5 +1,5 @@
 from genericpath import exists
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Child, Report, Babysitter
@@ -137,7 +137,8 @@ def editchild(request, child_id):
                 child[0].babysitters.set(babysitters)
             elif 'delete' in request.POST:
                 Child.objects.filter(pk=child_id).delete()
-        return HttpResponseRedirect(reverse('profiles'))
+            return HttpResponseRedirect(reverse('profiles'))
+
 
 def editsitter(request, babysitter_id):
     if request.method == 'GET':
@@ -155,7 +156,7 @@ def editsitter(request, babysitter_id):
                 babysitter.update(name=name, age=age, gender=gender)
             elif 'delete' in request.POST:
                 Babysitter.objects.filter(pk=babysitter_id).delete()
-                return HttpResponseRedirect(reverse('profiles'))
+            return HttpResponseRedirect(reverse('profiles'))
 
 
 

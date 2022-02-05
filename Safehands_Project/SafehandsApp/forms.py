@@ -8,7 +8,7 @@ class ChildForm(forms.Form):
     choices = []
     for babysitters in Babysitter.objects.all():
         choices.append((babysitters.babysitter_id, babysitters.name + ", " + babysitters.gender + ", " + babysitters.age ))
-    babysitters = forms.ChoiceField(widget=forms.Select, choices=choices, required=True)
+    babysitters = forms.MultipleChoiceField(widget=forms.SelectMultiple, choices=choices, required=True)
 # Report form allowing user to input data to create a report for a specific Child
 class ReportForm(forms.Form):
     meal = forms.CharField(max_length=25, required=True)
